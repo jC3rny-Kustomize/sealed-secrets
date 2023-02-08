@@ -1,0 +1,16 @@
+---
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+generators:
+  - ../../../../base/secret/generator/patches/disableNameSuffixHash/false
+
+
+resources:
+  - ../../../../base/sealedSecret
+
+
+transformers:
+  - ../../../../base/secret/annotation/sealedsecrets
+  - ../../../../base/secret/annotation/argocd

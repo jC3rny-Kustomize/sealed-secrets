@@ -1,0 +1,4 @@
+# ignore TMP folder
+**/tmp/**
+
+**/.charts/*.tgz

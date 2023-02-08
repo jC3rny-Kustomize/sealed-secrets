@@ -1,0 +1,30 @@
+---
+
+apiVersion: builtin
+kind: AnnotationsTransformer
+metadata:
+  name: sealedSecret
+
+annotations:
+  sealedsecrets.bitnami.com/namespace-wide: "true"
+
+fieldSpecs:
+  - kind: SealedSecret
+    path: metadata/annotations
+    create: true
+
+---
+
+apiVersion: builtin
+kind: AnnotationsTransformer
+metadata:
+  name: sealedSecretTemplate
+
+annotations:
+  sealedsecrets.bitnami.com/managed: "true"
+  sealedsecrets.bitnami.com/namespace-wide: "true"
+
+fieldSpecs:
+  - kind: SealedSecret
+    path: spec/template/metadata/annotations
+    create: true
