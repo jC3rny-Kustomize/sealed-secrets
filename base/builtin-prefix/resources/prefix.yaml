@@ -1,0 +1,15 @@
+---
+
+apiVersion: builtin
+kind: PrefixSuffixTransformer
+metadata:
+  name: sealed-secrets-prefix
+
+prefix: preview
+
+fieldSpecs:
+  - kind: Secret
+    path: metadata/name
+  
+  - kind: SealedSecret
+    path: metadata/name
